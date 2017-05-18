@@ -148,17 +148,13 @@ MongoCLient.connect(url , (err,database)=>{
                 }
 
                 console.log(updateFields);
-                
+        
 
                 if(Object.keys(updateFields).length === 0 && updateFields.constructor === Object) {
                     return res.status(200).json({
                         status : 'success',
                         message : 'nothing to update'
                     });
-                }
-
-                else {
-                    return console.log(updateFields);
                 }
 
                 try{
