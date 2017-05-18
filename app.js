@@ -161,37 +161,37 @@ MongoCLient.connect(url , (err,database)=>{
                     return console.log(updateFields);
                 }
 
-                // try{
-                //     const query = {_id : ObjectID(req.params.id)};
-                //     Question.updateOne(query, { $set : updateFields}, 
-                //     (err, data)=>{
-                //         // console.log('**Result =>',data);
-                //         if(err){
-                //             return res.status(503).json({
-                //                 status: 'failed',
-                //                 message: 'something went wrong'
-                //             });
-                //         }
-                //         if(query == null){
-                //             return res.status(503).json({
-                //                 status:'failed',
-                //                 message:'not found'
+                try{
+                    const query = {_id : ObjectID(req.params.id)};
+                    Question.updateOne(query, { $set : updateFields}, 
+                    (err, data)=>{
+                        // console.log('**Result =>',data);
+                        if(err){
+                            return res.status(503).json({
+                                status: 'failed',
+                                message: 'something went wrong'
+                            });
+                        }
+                        if(query == null){
+                            return res.status(503).json({
+                                status:'failed',
+                                message:'not found'
 
-                //             });
-                //         }
+                            });
+                        }
 
-                //         res.status(200).json({
-                //             data: data
-                //         });
+                        res.status(200).json({
+                            data: data
+                        });
                         
-                //     });
-                // }
-                // catch(err){
-                //     return res.status(503).json({
-                //         status:'failed',
-                //         message:'invalid'
-                //     });
-                // }
+                    });
+                }
+                catch(err){
+                    return res.status(503).json({
+                        status:'failed',
+                        message:'invalid'
+                    });
+                }
             });
 
 
