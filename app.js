@@ -121,30 +121,30 @@ MongoCLient.connect(url , (err,database)=>{
                 let updateFields = {};
 
                 if(Question_Title && Question_Title.length > 8) {
-                   return updateFields.Question_Title = Question_Title;
+                    updateFields.Question_Title = Question_Title;
                 }
                 
                 if(Question_Desc && Question_Desc.length >10){
-                   return updateFields.Question_Desc = Question_Desc;
+                   updateFields.Question_Desc = Question_Desc;
                 }
 
                 if(Opt_A){
-                   return updateFields.Opt_A = Opt_A;
+                    updateFields.Opt_A = Opt_A;
                 }
                 if(Opt_B){
-                    return updateFields.Opt_B = Opt_B;
+                    updateFields.Opt_B = Opt_B;
                 }
                 if(Opt_C){
-                    return updateFields.Opt_C = Opt_C;
+                    updateFields.Opt_C = Opt_C;
                 }
                 if(Opt_D){
-                    return updateFields.Opt_C = Opt_D;
+                    updateFields.Opt_C = Opt_D;
                 }
                 if(Answer){
-                    return updateFields.Answer = Answer;
+                    updateFields.Answer = Answer;
                 }
                 if(Image_Path){
-                    return updateFields.Image_Path = Image_Path;
+                    updateFields.Image_Path = Image_Path;
                 }
 
                 console.log(updateFields);
